@@ -6,7 +6,7 @@ import './index.css';
 // --- CONFIGURATION ---
 const PROFIT_MARGIN_PERCENTAGE = 50;
 const STRIPE_PUBLISHABLE_KEY = ""; // <-- PASTE YOUR STRIPE PUBLISHABLE KEY (pk_...)
-const API_URL = 'http://localhost:3001'; // The address of your backend server
+const API_URL = ''; // For production, this will be a relative path
 
 const stripePromise = STRIPE_PUBLISHABLE_KEY ? loadStripe(STRIPE_PUBLISHABLE_KEY) : null;
 
