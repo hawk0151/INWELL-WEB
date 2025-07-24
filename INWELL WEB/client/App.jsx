@@ -6,7 +6,7 @@ import './index.css';
 // --- CONFIGURATION ---
 const PROFIT_MARGIN_PERCENTAGE = 50;
 const STRIPE_PUBLISHABLE_KEY = ""; // <-- PASTE YOUR STRIPE PUBLISHABLE KEY (pk_...)
-const API_URL = ''; // For production, this will be a relative path
+const API_URL = ''; // For production, this will be a relative path, which is correct.
 
 const stripePromise = STRIPE_PUBLISHABLE_KEY ? loadStripe(STRIPE_PUBLISHABLE_KEY) : null;
 
@@ -21,9 +21,9 @@ const PRICING_DATA = {
 
 // --- Reusable UI Components ---
 const SectionHeader = ({ title, subtitle }) => (
-    <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold font-serif text-gray-800">{title}</h2>
-        <p className="text-gray-600 mt-2">{subtitle}</p>
+    <div className="mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold font-serif text-gray-800">{title}</h2>
+        {subtitle && <p className="text-gray-500 mt-1">{subtitle}</p>}
     </div>
 );
 
@@ -98,7 +98,6 @@ function App() {
     });
 
     const [story, setStory] = useState('');
-    const [blurb, setBlurb] = useState('');
     const [uiState, setUiState] = useState('form');
     const [cart, setCart] = useState({ subtotal: 0, shipping: 0, total: 0 });
     const [isLoading, setIsLoading] = useState(false);
