@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // --- Serve the Frontend File ---
 // This tells the server to serve the built React app from the 'client/dist' folder
-app.use(express.static(path.join(__dirname, 'client', 'dist')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 
 
 // --- API Routes ---
@@ -120,7 +120,7 @@ app.post('/api/order/create', (req, res) => {
 
 // Catch-all to serve the React app for any other request
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
 });
 
 
